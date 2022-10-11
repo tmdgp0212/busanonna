@@ -1,0 +1,689 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Happiness-Sans-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Happiness-Sans-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#wrap{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    font-family: 'Happiness-Sans-Regular';
+}
+
+header{
+    height: 80px;
+    order: -1;
+}
+
+header>.header_container{
+    position: relative;
+    width: 100%;
+    min-width: 1200px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 3px 3px #0002;
+    z-index: 500;
+}
+
+header>.header_container>h1.logo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    margin-top: -30px;
+    margin-left: -570px;
+}
+
+header>.header_container>h1.logo>a{
+    display: block;
+    height: 60px;
+    text-indent: -9999px;
+    background-image: url(./../image/logo/logo_busanonna.png);
+    background-size: contain;
+}
+
+header>.header_container>nav{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -310px;
+}
+
+header>.header_container>nav>.gnb{
+    display: flex;
+    width: 621px;
+}
+
+header>.header_container>nav>.gnb>li>a{
+    display: block;
+    height: 30px;
+    padding: 0 15px;
+    font-weight: 800;
+    line-height: 30px;
+    transition: color .2s;
+}
+
+header>.header_container>nav>.gnb>li.on>a,
+header>.header_container>nav>.gnb>li>a:hover{
+    color: #EE471C;
+}
+
+header>.header_container>nav>.gnb>.main_mnu>a{
+    font-size: 18px;
+}
+
+header>.header_container>nav>.gnb>.sub_mnu>a{
+    color: #555;
+    font-size: 15px;
+}
+
+
+/* 비쥬얼영역 */
+
+@keyframes fadeIn {
+    0%{opacity: 0.4;}
+    100%{opacity: 1;}
+}
+
+@keyframes RiseTxt {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}        
+
+@keyframes afterRiseTxt {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    40%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}        
+
+.visual{
+    width: 1200px;
+    height: 675px;
+    margin: 0 auto;
+    background-color: #fff;
+    order: -2;
+}
+
+.visual>h2{
+    position: fixed;
+    left: -9999px;
+}
+
+.visual>.visual_container{
+    position: relative;
+    width: 1200px;
+    height: 675px;
+}
+
+.visual>.visual_container>.fade-frame{
+    display: none;
+    position: absolute;
+    width: 1200px;
+    height: 675px;
+    overflow: hidden;
+    animation: fadeIn .8s;
+}
+
+.visual>.visual_container>.fade-frame.on{
+    display: block;
+}
+
+.visual>.visual_container>.fade-frame>img{
+    display: block;
+    width: 100%;
+}
+
+.visual>.visual_container>.fade-frame>p{
+    position: absolute;
+    right: 80px;
+    color: #fff;
+    font-weight: 800;
+    text-shadow: 2px 2px 7px #0008;
+}
+
+.visual>.visual_container>.fade-frame>.spot{
+    top: 50px;
+    font-family: 'Happiness-Sans-Bold';
+    font-size: 66px;
+    animation: RiseTxt 2s;
+}
+
+.visual>.visual_container>.fade-frame>.location{
+    top: 130px;
+    font-size: 32px;
+    animation: afterRiseTxt 2s;
+}
+
+
+/* 비쥬얼 활성화표시 */
+
+.visual>.visual_container>.active{
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+}
+
+.visual>.visual_container>.active>li{
+    margin: 0 5px;
+}
+
+.visual>.visual_container>.active>li>a{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff7;
+    border: 1px solid #fff9;
+    border-radius: 50%;
+}
+
+.visual>.visual_container>.active>li.on>a,
+.visual>.visual_container>.active>li>a:hover{
+    background-color: #fff;
+}
+
+.visual>.visual_container>.auto_play{
+    position: absolute;
+    left: 50%;
+    bottom: 23px;
+    margin-left: -25px;
+}
+
+.visual>.visual_container>.auto_play>a{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url(./../image/icon-stop-fill-s-white.svg);
+    background-size: contain;
+}
+
+.visual>.visual_container>.auto_play.pause>a{
+    background-image: url(./../image/icon-play-fill-s-white.svg);
+}
+
+
+/* 본문영역 */
+.contents{
+    width: 1200px;
+    padding: 32px 0;
+    margin: 0 auto 150px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.contents>h2{
+    position: fixed;
+    left: -9999px;
+}
+
+.contents>.recommend{
+    padding: 40px 0;
+}
+
+.contents>.recommend>h3{
+    font-size: 22px;
+    height: 24px;
+    margin: 40px 0;
+    line-height: 24px;
+    text-align: center;
+}
+
+.contents>.recommend>h3>span{
+    color: #EE471C;
+    font-family: 'Happiness-Sans-Bold';
+    font-size: 26px;
+}
+
+.contents>.recommend>.slide-wrapper{
+    overflow: hidden;
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    height: 315px;
+}
+
+.contents>.recommend>.slide-wrapper:before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100px;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0.8239670868347339) 40%, rgba(255,255,255,0) 90%);
+    content: '';
+    z-index: 100;
+}
+
+.contents>.recommend>.slide-wrapper:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 10%, rgba(255,255,255,0.8239670868347339) 60%, rgba(255,255,255,1) 85%);
+    content: '';
+    z-index: 100;
+}
+
+.contents>.recommend>.slide-wrapper>ul{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    height: 315px;
+    margin-left: -220px;
+    transition: all .5s;
+}
+
+.contents>.recommend>.slide-wrapper>ul>li{
+    overflow: hidden;
+    position: relative;
+    width: 440px;
+    height: 300px;
+    margin-right: 24px;
+    background-size: cover;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 7px #0006;
+    transition: transform .3s;
+}
+
+.contents>.recommend>.slide-wrapper>ul>li:hover{
+    transform: translateY(-4px);
+}
+
+.contents>.recommend>.slide-wrapper>ul>li>a{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: rgb(0,0,0);
+    background: linear-gradient(156deg, rgba(0,0,0,0.76234243697479) 0%, rgba(0,0,0,0) 43%, rgba(0,0,0,0) 100%);
+
+}
+
+.contents>.recommend>.slide-wrapper>ul>li>a>h4{
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 22px;
+}
+
+.contents>.recommend>.slide-wrapper>ul>li>a>p{
+    color: #fff;
+    font-size: 18px;
+}
+
+.contents>.recommend>.slide-wrapper>a{
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    margin-top: -17.5px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #F6A710;
+    border-radius: 50%;
+}
+
+.contents>.recommend>.slide-wrapper>.prev{
+    left: 0;
+    z-index: 200;
+}
+
+.contents>.recommend>.slide-wrapper>.next{
+    right: 0;
+    z-index: 200;
+}
+
+.contents>.recommend>.guide{
+    width: 800px;
+    margin: 0 auto;
+    border-right: 4px solid #F6A710;
+    border-left: 4px solid #F6A710;
+    border-radius: 12px;
+}
+
+.contents>.recommend>.guide>p{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 38px;
+    height: 120px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 22px;
+    line-height: 24px;
+    text-align: justify;
+    animation: fadeIn .5s;
+}
+
+.contents>.recommend>.guide>p.on{
+    display: flex;
+}
+
+.contents>.recommend>.guide>p>span{
+    display: block;
+    margin: 8px;
+    text-align: center;
+}
+
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(1){background-image: url(./../image/heaundea_beach.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(2){background-image: url(./../image/the_bay101.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(3){background-image: url(./../image/dongbek_island.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(4){background-image: url(./../image/bluelinepark.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(5){background-image: url(./../image/gwanganli.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(6){background-image: url(./../image/egidea.jpg);}
+.contents>.recommend.heaundea>.slide-wrapper>ul>li:nth-child(7){background-image: url(./../image/oryukdo.jpg);}
+
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(1){background-image: url(./../image/night_market.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(2){background-image: url(./../image/bookload.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(3){background-image: url(./../image/yongdu_mountain.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(4){background-image: url(./../image/culture_village.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(5){background-image: url(./../image/cablecar.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(6){background-image: url(./../image/dadeapo.jpg);}
+.contents>.recommend.junggu>.slide-wrapper>ul>li:nth-child(7){background-image: url(./../image/gamcheon.jpg);}
+
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(1){background-image: url(./../image/juksungchurch.jpg);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(2){background-image: url(./../image/yonggungtemple.jpg);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(3){background-image: url(./../image/ligwang.png);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(4){background-image: url(./../image/welbingpark.jpg);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(5){background-image: url(./../image/luge.jpg);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(6){background-image: url(./../image/lotte.png);}
+.contents>.recommend.gijang>.slide-wrapper>ul>li:nth-child(7){background-image: url(./../image/nineforest.jpg);}
+
+
+.contents>.festa{
+    padding: 80px 50px;
+    background-color: #2157A4;
+}
+
+.contents>.festa>.container{
+    padding: 30px 110px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #0004;
+}
+
+.contents>.festa>.container>h3{
+    height: 80px;
+    color: #2157A4;
+    font-family: 'Happiness-Sans-Bold';
+    font-size: 22px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.contents>.festa>.container>table{
+    width: 100%;
+    margin: 30px 0;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.contents>.festa>.container>table>caption{display: none;}
+
+.contents>.festa>.container>table>thead>tr>th{
+    height: 55px;
+    background-color: #EAEFF7;
+    border-right: 1px solid #fff;
+}
+.contents>.festa>.container>table>thead>tr>th:last-child{
+    border-right: none;
+}
+
+.contents>.festa>.container>table>tbody>tr>td{
+    height: 55px;
+    line-height: 55px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.contents>.festa>.container>table>tbody>tr>td:last-child{
+    border-right: none;
+}
+.contents>.festa>.container>table>tbody>tr:last-child>td{
+    border-bottom: none;
+}
+
+.contents>.news>.upper{
+    padding: 30px 50px 80px ;
+    background-color: #2157A4;
+}
+
+.contents>.news>.upper>h3{
+    height: 50px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.contents>.news>.upper>.news_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.contents>.news>.upper>.news_container>p{
+    width: 122px;
+    height: 122px;
+    font-size: 22px;
+    line-height: 123px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.contents>.news>.upper>.news_container>.news_slide{
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 122px;
+    border-radius: 5px;
+}
+
+.contents>.news>.upper>.news_container>.news_slide>ul{
+    position: absolute;
+    transition: all .5s;
+}
+
+.contents>.news>.upper>.news_container>.news_slide>ul>li{
+    width: 900px;
+}
+
+.contents>.news>.upper>.news_container>.news_slide>ul>li>a{
+    display: block;
+    height: 40px;
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #EAEFF7;
+    border-bottom: 1px solid #fff;
+}
+
+.contents>.news>.upper>.news_container>.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+}
+
+.contents>.news>.upper>.news_container>.buttons>a{
+    color: #fff9;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contents>.news>.upper>.news_container>.buttons>.up{
+    order: 100;
+}
+
+.contents>.news>.upper>.news_container>.buttons>.down{
+    order: 300;
+}
+
+.contents>.news>.upper>.news_container>.buttons>span{
+    background-image: url(./../image/icon-play-fill-s-white.svg);
+    background-position: center;
+    order: 200;
+}
+
+.contents>.news>.upper>.news_container>.buttons>span.pause{
+    background-image: url(./../image/icon-stop-fill-s-white.svg);
+}
+
+.contents>.news>.upper>.news_container>.buttons>span>a{
+    display: block;
+    width: 30px;
+    height: 30px;    
+}
+
+.contents>.news>.under{
+    padding: 80px 50px;
+}
+
+.contents>.news>.under>h3{
+    height: 50px;
+    color: #777;
+    font-family: 'Happiness-Sans-Bold';
+    font-size: 22px;
+    text-align: center;
+}
+
+.contents>.news>.under>ul{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.contents>.news>.under>ul>li{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .3s;
+}
+
+.contents>.news>.under>ul>li:hover{
+    transform: scale(1.05);
+}
+
+.contents>.news>.under>ul>li:nth-child(1){background-image: url(./../image/logo/busan_logo_B&W.png);}
+.contents>.news>.under>ul>li:nth-child(2){background-image: url(./../image/logo/bto_logo_B&W.png);}
+.contents>.news>.under>ul>li:nth-child(3){background-image: url(./../image/logo/bfo_logo_B&W.jpg);}
+.contents>.news>.under>ul>li:nth-child(4){background-image: url(./../image/logo/busantrack_logo_B&W.png);}
+.contents>.news>.under>ul>li:nth-child(5){background-image: url(./../image/logo/visit_korea_logo_B&W.png);}
+
+.contents>.news>.under>ul>li:nth-child(1):hover{background-image: url(./../image/logo/busan_logo.png);}
+.contents>.news>.under>ul>li:nth-child(2):hover{background-image: url(./../image/logo/bto_logo.png);}
+.contents>.news>.under>ul>li:nth-child(3):hover{background-image: url(./../image/logo/bfo_logo.jpg);}
+.contents>.news>.under>ul>li:nth-child(4):hover{background-image: url(./../image/logo/busantrack_logo.png);}
+.contents>.news>.under>ul>li:nth-child(5):hover{background-image: url(./../image/logo/visit_korea_logo.png);}
+
+.contents>.news>.under>ul>li>a{
+    display: block;
+    width: 220px;
+    height: 80px;
+    text-indent: -9999px;
+}
+
+
+/* 푸터 영역 */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    width: 1200px;
+    height: 150px;
+    margin-left: -600px;
+    background-color: #eee;
+    z-index: -100;
+}
+
+footer>.logo{
+    width: 140px;
+    height: 70px;
+    text-indent: -9999px;
+    background-image: url(./../image/logo/logo_busanonna_b&w.png);
+    background-size: contain;
+}
+
+footer>address{
+    height: 25px;
+    line-height: 25px;
+}
+
+aside>a{
+    display: block;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    right: 26px;
+    bottom: 26px;
+    padding: 12px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #EE471Cee;
+    border-radius: 50%;
+    transition: all .2s;
+    z-index: 500;
+}
+
+aside>a:hover{
+    background-color: #EE471C;
+    outline: 1px solid #EE471C;
+    outline-offset: 3px;
+}
+
+aside>a>i{
+    color: #fff;
+}
